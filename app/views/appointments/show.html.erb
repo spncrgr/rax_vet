@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Patient:</strong>
+  <%= @appointment.patient.name %>
+</p>
+<p>
+  <strong>Customer:</strong>
+  <%= @appointment.patient.customer.name %>
+</p>
+<p>
   <strong>Date:</strong>
   <%= @appointment.date %>
 </p>

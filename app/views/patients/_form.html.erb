@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :customer_name %><br>
+    <%= f.select :customer_id, Customer.all.collect { |p| [p.name, p.id]}, include_blank: true %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
