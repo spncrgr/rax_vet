@@ -69,6 +69,6 @@ class EncountersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def encounter_params
-      params.require(:encounter).permit(:date_time_started, :date_time_ended, :requires_follow-up, :follow-up_in, :diagnoses, :prescription, :notes)
+      params.require(:encounter).permit(:date_time_started, :date_time_ended, :requires_follow_up, :follow_up_in, :diagnoses, :prescription, :notes)
     end
 end
