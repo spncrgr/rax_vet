@@ -4,7 +4,7 @@ class Patient < ActiveRecord::Base
   has_many :encounters
 
   validates :name, presence: true, length: {maximum: 35}
-  validates :type, inclusion: {in: %w(dog, cat, bird)}
+  validates :pet_type, inclusion: {in: %w(dog, cat, bird)}
   validates :breed, presence: true
   validates :age, presence: true
   validates :weight, presence: true
