@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810034201) do
+ActiveRecord::Schema.define(version: 20150810231124) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "date"
@@ -19,7 +19,12 @@ ActiveRecord::Schema.define(version: 20150810034201) do
     t.text     "reason_for_visit"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "employee_id"
+    t.integer  "patient_id"
   end
+
+  add_index "appointments", ["employee_id"], name: "index_appointments_on_employee_id"
+  add_index "appointments", ["patient_id"], name: "index_appointments_on_patient_id"
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
@@ -34,11 +39,11 @@ ActiveRecord::Schema.define(version: 20150810034201) do
     t.string   "city"
     t.string   "state",             limit: 2
     t.string   "zip_code",          limit: 5
-    t.text     "school_attended"
-    t.integer  "years_in_practice"
-    t.boolean  "doctor"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.boolean  "doctor"
+    t.text     "school_attended"
+    t.integer  "years_in_practice"
   end
 
   create_table "encounters", force: :cascade do |t|
@@ -51,7 +56,12 @@ ActiveRecord::Schema.define(version: 20150810034201) do
     t.text     "notes"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "employee_id"
+    t.integer  "patient_id"
   end
+
+  add_index "encounters", ["employee_id"], name: "index_encounters_on_employee_id"
+  add_index "encounters", ["patient_id"], name: "index_encounters_on_patient_id"
 
   create_table "patients", force: :cascade do |t|
     t.string   "name"
@@ -62,7 +72,10 @@ ActiveRecord::Schema.define(version: 20150810034201) do
     t.datetime "date_of_last_appointment"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "customer_id"
   end
+
+  add_index "patients", ["customer_id"], name: "index_patients_on_customer_id"
 
   create_table "users", force: :cascade do |t|
     t.boolean  "customer"

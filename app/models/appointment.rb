@@ -10,7 +10,7 @@ class Appointment < ActiveRecord::Base
   belongs_to :patient
   belongs_to :employee
 
-  validates_associated :patient
+  # validates_associated :patient
 
   validates :date, presence: true, date: true
   validates :reason_for_visit, presence: true
