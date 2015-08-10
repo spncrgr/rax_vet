@@ -13,7 +13,7 @@
 
     <div class="field">
       <%= f.label :pet_name %>
-      <%= f.select :patient, Patient.all.collect { |p| [p.name, p.id]}, include_blank: true  %>
+      <%= f.select :patient_id, Patient.all.collect { |p| [p.name, p.id]}, include_blank: true  %>
     </div>
   <div class="field">
     <%= f.label :date %><br>
