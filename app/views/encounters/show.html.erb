@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date time started:</strong>
+  <%= @encounter.date_time_started %>
+</p>
+
+<p>
+  <strong>Date time ended:</strong>
+  <%= @encounter.date_time_ended %>
+</p>
+
+<p>
+  <strong>Requires follow-up:</strong>
+  <%= @encounter.requires_follow-up %>
+</p>
+
+<p>
+  <strong>Follow-up in:</strong>
+  <%= @encounter.follow-up_in %>
+</p>
+
+<p>
+  <strong>Diagnoses:</strong>
+  <%= @encounter.diagnoses %>
+</p>
+
+<p>
+  <strong>Prescription:</strong>
+  <%= @encounter.prescription %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @encounter.notes %>
+</p>
+
+<%= link_to 'Edit', edit_encounter_path(@encounter) %> |
+<%= link_to 'Back', encounters_path %>

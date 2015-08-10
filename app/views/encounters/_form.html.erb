@@ -1,0 +1,45 @@
+<%= form_for(@encounter) do |f| %>
+  <% if @encounter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@encounter.errors.count, "error") %> prohibited this encounter from being saved:</h2>
+
+      <ul>
+      <% @encounter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date_time_started %><br>
+    <%= f.datetime_select :date_time_started %>
+  </div>
+  <div class="field">
+    <%= f.label :date_time_ended %><br>
+    <%= f.datetime_select :date_time_ended %>
+  </div>
+  <div class="field">
+    <%= f.label :requires_follow-up %><br>
+    <%= f.check_box :requires_follow-up %>
+  </div>
+  <div class="field">
+    <%= f.label :follow-up_in %><br>
+    <%= f.text_field :follow-up_in %>
+  </div>
+  <div class="field">
+    <%= f.label :diagnoses %><br>
+    <%= f.text_area :diagnoses %>
+  </div>
+  <div class="field">
+    <%= f.label :prescription %><br>
+    <%= f.text_area :prescription %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
