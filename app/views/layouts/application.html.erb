@@ -10,5 +10,11 @@
 
 <%= yield %>
 
+<section id="footer" style="text-align: center; margin: 30px;">
+  <%= link_to 'customers', customers_path %> |
+  <%= link_to 'patients', patients_path %> |
+  <%= link_to 'employees', employees_path %> |
+  <%= link_to 'appointments', appointments_path %>
+</section>
 </body>
 </html>
