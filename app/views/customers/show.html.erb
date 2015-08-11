@@ -5,5 +5,13 @@
   <%= @customer.name %>
 </p>
 
+<% @customer.patients.each do |patient| %>
+    <p><strong>Pet Name:</strong> <%= patient.name %><br/>
+      <strong>Upcoming appointments:</strong></p>
+    <% patient.appointments.where('date >= ?', DateTime.now).each do |appointment| %>
+        <p><%= appointment.date %></p>
+    <% end %>
+<% end %>
+
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
