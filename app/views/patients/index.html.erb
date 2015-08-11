@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Owner</th>
       <th>Pet Type</th>
       <th>Breed</th>
       <th>Age</th>
@@ -19,6 +20,7 @@
     <% @patients.each do |patient| %>
       <tr>
         <td><%= patient.name %></td>
+        <td><%= patient.customer.name %></td>
         <td><%= patient.pet_type %></td>
         <td><%= patient.breed %></td>
         <td><%= patient.age %></td>

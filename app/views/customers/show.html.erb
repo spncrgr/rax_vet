@@ -9,7 +9,7 @@
     <p><strong>Pet Name:</strong> <%= patient.name %><br/>
       <strong>Upcoming appointments:</strong></p>
     <% patient.appointments.where('date >= ?', DateTime.now).each do |appointment| %>
-        <p><%= appointment.date %></p>
+        <p style="margin-left: 20px"><%= appointment.date %></p>
     <% end %>
 <% end %>
 

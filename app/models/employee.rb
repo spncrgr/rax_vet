@@ -1,7 +1,8 @@
 class YearsValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     if record.doctor
-      unless value > 0 || value <= 100
+      return unless value
+      unless value > 0 && value <= 100
         record.errors[attribute] << (options[:message] || 'is not between 1 and 100')
       end
     end
