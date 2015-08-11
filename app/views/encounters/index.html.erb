@@ -28,7 +28,7 @@
         <td><%= encounter.notes %></td>
         <td><%= link_to 'Show', encounter %></td>
         <td><%= link_to 'Edit', edit_encounter_path(encounter) %></td>
-        <td><%= link_to 'Destroy', encounter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', encounter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
