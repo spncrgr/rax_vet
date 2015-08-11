@@ -14,4 +14,5 @@ class Appointment < ActiveRecord::Base
 
   validates :date, presence: true, date: true
   validates :reason_for_visit, presence: true
+  validates :patient_id, presence: true
 end

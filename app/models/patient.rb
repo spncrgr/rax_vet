@@ -11,4 +11,5 @@ class Patient < ActiveRecord::Base
   validates :age, presence: true
   validates :weight, presence: true
   validates :date_of_last_appointment, presence: true
+  validates :customer_id, presence: true
 end
